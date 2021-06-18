@@ -6,6 +6,7 @@
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
+    "node-sass": "^4.14.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-scripts": "4.0.3",
@@ -15,7 +16,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "preinstall": "npx npm-force-resolutions"
   },
   "eslintConfig": {
     "extends": [
@@ -34,5 +36,21 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "browserslist": "^4.16.6",
+    "css-what": "^5.0.1",
+    "glob-parent": "^5.1.2",
+    "normalize-url": "^4.5.1",
+    "postcss": "^7.0.36",
+    "trim-newlines": "^4.0.1"
+  },
+  "resolutions": {
+    "normalize-url": "^4.5.1",
+    "css-what": "^5.0.1",
+    "glob-parent": "^5.1.2",
+    "browserslist": "^4.16.6",
+    "postcss": "^7.0.36",
+    "trim-newlines": "^4.0.1"
   }
 }

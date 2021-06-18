@@ -1,0 +1,20 @@
+.header {
+    height: 6rem;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,.1);
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+        .wrap {
+            max-width: 1500px;
+        }
+
+            .logo {
+                width: 20rem;
+                margin-left: 2rem;
+            }
+
+                img {
+                    width: 15rem;
+                }
+}
