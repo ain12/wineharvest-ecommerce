@@ -2,7 +2,7 @@
     height: 6rem;
     box-shadow: 0 2px 4px 0 rgba(0,0,0,.1);
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-between;
     align-items: center;
 
         .wrap {
@@ -11,10 +11,20 @@
 
             .logo {
                 width: 20rem;
-                margin-left: 2rem;
+                margin-left: 2.5rem;
             }
 
                 img {
                     width: 15rem;
                 }
+}
+
+.btnRegisterContainer {
+   margin-right: 2.5rem;
+    a {
+        color: #000;
+        text-decoration: none;
+        text-transform: uppercase;
+        font-size: 1.5rem;
+    }
 }
