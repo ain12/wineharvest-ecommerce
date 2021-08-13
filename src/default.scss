@@ -12,6 +12,7 @@ html, body {
 
 html, body, .App, #root, .giveFullHeight {
     height: 100%;
+    overflow: hidden;
 }
 
 html {
