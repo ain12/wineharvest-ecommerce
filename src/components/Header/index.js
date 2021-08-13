@@ -1,8 +1,9 @@
-import React, { useState, useEffect, useContext } from "react";
-import "./styles.scss";
-import { logOut } from "./../../firebase/utils";
+import React, { useContext } from "react";
 import { UserContext } from "./../../providers/UserProvider";
 import { HashLink as Link } from 'react-router-hash-link';
+import "./styles.scss";
+import { logOut } from "./../../firebase/utils";
+import { HamburgerBtn } from "../forms/Hamburger";
 import Logo from "./../../assets/wineharvestlogo.PNG";
 
 const Header = () => {
@@ -22,7 +23,9 @@ const Header = () => {
                 {user === null ?
                     <Link to="/login">login</Link> : <Link to="/" onClick={logOut}>logout</Link>
                 }
-                {console.log(user)}
+            </div>
+            <div className="hamburgerBtn">
+                <HamburgerBtn />
             </div>
         </header>
     )

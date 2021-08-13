@@ -2,6 +2,7 @@
     height: 6rem;
     box-shadow: 0 2px 4px 0 rgba(0,0,0,.1);
     display: flex;
+    width: 100%;
     justify-content: space-between;
     align-items: center;
 
@@ -17,18 +18,36 @@
                 img {
                     width: 15rem;
                 }
+                .hamburgerBtn{
+                    display: none;
+                    z-index: 6;
+                    @media (max-width: 767px){
+                        display: block;
+                        padding-top: 10px;
+                        margin-left: 10px;
+                        margin-right: 10px;
+                        z-index: 6;
+                }
+                }
+
+                .btnRegisterContainer {
+                    margin-right: 2.5rem;
+                     a {
+                         color: #000;
+                         text-decoration: none;
+                         text-transform: uppercase;
+                         font-size: 1.5rem;
+                 
+                         &:not(:last-child) {
+                             margin-right: 1.5rem;
+                         }
+                     }
+                     @media (max-width: 767px){
+                         display: none;
+                     }
+                 }
 }
 
-.btnRegisterContainer {
-   margin-right: 2.5rem;
-    a {
-        color: #000;
-        text-decoration: none;
-        text-transform: uppercase;
-        font-size: 1.5rem;
 
-        &:not(:last-child) {
-            margin-right: 1.5rem;
-        }
-    }
-}
+
+
