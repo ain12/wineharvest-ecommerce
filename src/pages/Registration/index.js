@@ -1,11 +1,8 @@
 import React from "react";
+import { SignUp } from "../../components/SignUp";
 import "./styles.scss";
 
 export const Registration = () => {
 
-    return (
-        <section className="directory">
-            <h1>Registration page</h1>
-        </section>
-    )
+    return <SignUp />
 }

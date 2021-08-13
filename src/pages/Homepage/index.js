@@ -1,8 +1,7 @@
-import React, { useState, useEffect, useContext } from "react";
+import React from "react";
 import "./styles.scss";
 import Directory from "../../components/Directory";
-import { Redirect } from 'react-router-dom';
-import { UserContext } from "../../providers/UserProvider";
+
 
 
 const Homepage = props => {

@@ -1,53 +1,52 @@
-import React, { useState, useRef } from "react";
+import React, { useRef, useState } from "react";
 import "./styles.scss";
 import Button from "./../forms/Button";
-import { signInWithGoogle } from "./../../firebase/utils";
-import { logInWithEmail } from "../../firebase/utils";
 import { Alert } from 'react-bootstrap';
-import { useHistory } from "react-router";
-import googleLogo from "../../assets/g-logo.png";
+import { createAccount } from "../../firebase/utils";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 
-export const SignIn = () => {
+export const SignUp = () => {
     const [error, setError] = useState("");
     const [loading, setLoading] = useState(false);
     const emailRef = useRef();
     const passwordRef = useRef();
-    const history = useHistory();
+    const passwordConfirmRef = useRef();
 
     const handleSubmit = async e => {
         e.preventDefault();
+
+        if (passwordRef.current.value !== passwordConfirmRef.current.value) {
+            return setError("Passwords do not match");
+        }
+
         try {
             setError("")
             setLoading(true)
-            await logInWithEmail(emailRef.current.value, passwordRef.current.value)
-            history.push("/")
+            await createAccount(emailRef.current.value, passwordRef.current.value)
         } catch {
-            setError("Failed to log in")
+            setError("Failed to create an account")
         }
 
         setLoading(false)
     }
 
     return (
-        <div className="signIn">
+        <div className="signUp">
             <div className="wrap">
-                <h2>LogIn</h2>
+                <h2>Sign Up</h2>
                 {error && <Alert variant="danger">{error}</Alert>}
                 <div className="formContainer">
                     <form onSubmit={handleSubmit}>
-                        <div className="socialLogin">
+                        <div className="socialSignup">
                             <label><b>Email</b></label>
                             <input type="text" ref={emailRef} placeholder="Enter Email" name="email" required></input>
                             <label><b>Password</b></label>
                             <input type="password" ref={passwordRef} placeholder="Enter Password" name="password" required></input>
+                            <label><b>Repeat Password</b></label>
+                            <input type="password" ref={passwordConfirmRef} placeholder="Repeat Password" name="passwordRepeat" required></input>
                             <Button disabled={loading}>
-                                Sign In
-                            </Button>
-                            <br />
-                            <Button onClick={signInWithGoogle}>
-                                <img src={googleLogo} alt="Google logo" />
-                                Sign in with Google
+                                <p>Sign Up</p>
                             </Button>
                         </div>
                     </form>

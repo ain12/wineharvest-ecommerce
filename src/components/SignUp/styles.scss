@@ -1,4 +1,4 @@
-.signIn {
+.signUp {
     display: block;
     width: 100%;
     max-width: 50rem;
@@ -21,13 +21,8 @@
         width: 100%;
     }
 
-    .socialLogin {
+    .socialSignup {
         margin: 3rem 2rem 3rem;
-    }
-
-    img {
-        width: 30px;
-        margin-right: 2rem;
     }
 
     input[type=text], input[type=password] {
@@ -44,5 +39,4 @@
         background-color: #ddd;
         outline: none;
       }
-
 }
