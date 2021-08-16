@@ -1,9 +1,12 @@
 import React, { useRef, useState } from "react";
 import "./styles.scss";
 import Button from "./../forms/Button";
+import { signInWithGoogle } from "./../../firebase/utils";
 import { Alert } from 'react-bootstrap';
 import { createAccount } from "../../firebase/utils";
 import 'bootstrap/dist/css/bootstrap.min.css';
+import googleLogo from "../../assets/g-logo.png";
+
 
 
 export const SignUp = () => {
@@ -47,6 +50,11 @@ export const SignUp = () => {
                             <input type="password" ref={passwordConfirmRef} placeholder="Repeat Password" name="passwordRepeat" required></input>
                             <Button disabled={loading}>
                                 <p>Sign Up</p>
+                            </Button>
+                            <br />
+                            <Button onClick={signInWithGoogle}>
+                                <img src={googleLogo} alt="Google logo" />
+                                Sign up with Google
                             </Button>
                         </div>
                     </form>
