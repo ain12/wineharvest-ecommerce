@@ -20,7 +20,7 @@ const BtnRegisterContainer = styled.div`
             }
         }
         @media (max-width: 767px){
-            display: ${props => props.clicked ? "flex" : "none"};
+            display: ${props => props.clicked ? "block" : "none"};
             position: fixed; 
             z-index: 1; 
             padding-top: 100px; 
@@ -31,21 +31,23 @@ const BtnRegisterContainer = styled.div`
             overflow: auto;
             background-color: rgb(0,0,0); 
             background-color: rgba(0,0,0,0.4); 
-            flex-direction: column;
-            align-items: center;
 
             ul {
+                display: flex;
                 background-color: #fefefe;
                 margin: 5% auto; 
                 padding: 20px;
                 border: 1px solid #888;
+                border-radius: 1rem;
                 width: 80%;
-                height: 200px;
+                height: 250px;
+                flex-direction: column;
+                align-items: center;
             }
 
         li, a {
             color: #000;
-            font-size: 28px;
+            font-size: 20px;
             font-weight: bold;
             margin-top: 1.5rem;
             margin-right: 0;

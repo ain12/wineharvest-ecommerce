@@ -1,10 +1,16 @@
 .signIn {
     display: block;
     width: 100%;
-    max-width: 50rem;
-    border: 1px solid #000;
+    max-width: 40rem;
+    border: 1px solid rgb(192, 184, 184);;
     margin: 4rem auto 6rem;
     border-radius: 1.7rem;
+    -webkit-box-shadow: 0 12px 12px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 0 12px 12px rgba(0, 0, 0, 0.3);
+	box-shadow: 0 12px 12px rgba(0, 0, 0, 0.3);
+        @media (max-width: 425px) {
+            max-width: 30rem;
+        }
 
     .wrap {
         padding: 5px;
