@@ -1,5 +1,5 @@
 import firebase from "firebase/app";
-import "firebase/firestore"
+import 'firebase/firestore';
 import "firebase/auth"
 import dotenv from 'dotenv'
 dotenv.config()
@@ -13,14 +13,17 @@ if (firebase.apps.length === 0) {
         messagingSenderId: process.env.REACT_APP_MESSAGING_SENDER_ID,
         appId: process.env.REACT_APP_APP_ID,
 
-    });
+    }).firestore();
 }
 
+export const firestore = firebase.firestore();
 export const auth = firebase.auth();
 const googleProvider = new firebase.auth.GoogleAuthProvider()
 export const signInWithGoogle = () => {
     auth.signInWithPopup(googleProvider).then((res) => {
+
         console.log(res.user)
+
     }).catch((error) => {
         console.log(error.message)
     })

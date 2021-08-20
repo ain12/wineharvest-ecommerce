@@ -14,6 +14,7 @@ export const UserProvider = (props) => {
                     displayName,
                     email,
                 })
+                console.log(user)
             } else {
                 setUser(null)
             }
