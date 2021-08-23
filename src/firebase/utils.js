@@ -15,7 +15,7 @@ if (firebase.apps.length === 0) {
 
     }).firestore();
 }
-
+//settings({ experimentalForceLongPolling: true })
 export const firestore = firebase.firestore();
 export const auth = firebase.auth();
 const googleProvider = new firebase.auth.GoogleAuthProvider()
@@ -29,9 +29,9 @@ export const signInWithGoogle = () => {
     })
 }
 
-export const createAccount = (email, password) => {
+/*export const createAccount = (email, password) => {
     return auth.createUserWithEmailAndPassword(email, password)
-}
+}*/
 
 export const logInWithEmail = (email, password) => {
     return auth.signInWithEmailAndPassword(email, password)
@@ -44,6 +44,31 @@ export const logOut = () => {
         console.log(error.message)
     })
 }
+
+export const handleUserProfile = async (userAuth, additionalData) => {
+    if (!userAuth) {
+        console.warn("No userAuth provided!");
+        return;
+    }
+
+    const { email } = userAuth;
+    const timestamp = new Date();
+
+    console.log(email, timestamp, additionalData)
+
+    try {
+        return await firestore.collection("users").add({
+            email,
+            timestamp,
+            ...additionalData
+        })
+
+    } catch (err) {
+        console.log(err);
+    }
+
+    return null;
+};
 
 /*export const auth = firebase.auth();
 export const firestore = firebase.firestore();
