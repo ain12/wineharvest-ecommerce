@@ -5,6 +5,7 @@ import { MainHomePageLayout } from "./layouts/MainHomePageLayout";
 import Homepage from "./pages/Homepage";
 import { Registration } from "./pages/Registration";
 import { UserProvider } from "./providers/UserProvider";
+import { Shop } from "./pages/Shop";
 import Login from "./pages/Login";
 import "./default.scss";
 
@@ -26,6 +27,11 @@ function App() {
           <Route path="/login" render={() => (
             <MainLayout>
               <Login />
+            </MainLayout>
+          )} />
+          <Route path="/shop" render={() => (
+            <MainLayout>
+              <Shop />
             </MainLayout>
           )} />
         </Switch>

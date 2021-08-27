@@ -1,4 +1,5 @@
 import React from "react";
+import { HashLink as Link } from 'react-router-hash-link';
 import Vineyard from "./../../assets/pexels-david-bartus-442116.jpg";
 import "./styles.scss";
 
@@ -11,7 +12,7 @@ const Directory = props => {
                 }}>
                     <h1>wine harvest</h1>
                     <h2>Fake web-app about wines to improve my skills</h2>
-                    <a href="/">Shop now</a>
+                    <Link to="/shop">Shop now</Link>
                 </div>
             </div>
         </div>
